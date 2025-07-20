@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escrow Request Form</title>
+  <link rel="stylesheet" href="escrow.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Escrow Request Form</h2>
+    <form id="escrowForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required />
+
+      <label for="description">Item Description:</label>
+      <textarea id="description" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg" class="success-message"></p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAieRdXGsYRowlrCP-f20iylTb_KHK77yQ",
+      authDomain: "simplifyd-biz.firebaseapp.com",
+      projectId: "simplifyd-biz",
+      storageBucket: "simplifyd-biz.firebasestorage.app",
+      messagingSenderId: "681167510393",
+      appId: "1:681167510393:web:6a97787187ee27e879eda8",
+      measurementId: "G-V2046MG1R6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("escrowForm");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const description = document.getElementById("description").value;
+
+      try {
+        await addDoc(collection(db, "escrowRequests"), {
+          name,
+          email,
+          phone,
+          description,
+          createdAt: new Date()
+        });
+
+        successMsg.textContent = "Form submitted successfully!";
+        form.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        successMsg.textContent = "Something went wrong!";
+        successMsg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
