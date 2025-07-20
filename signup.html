@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - Simplifyd Biz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="signup.html">Get Started</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section-padding">
+    <h1>Create an Account on Simplifyd Biz</h1>
+    <form id="signup-form" class="signup-form">
+      <label for="email">Email Address *</label>
+      <input type="email" name="email" required />
+
+      <label for="password">Password *</label>
+      <input type="password" name="password" required />
+
+      <ul style="font-size: 0.9rem; color: #555;">
+        <li>At least 7 characters</li>
+        <li>At least one UPPER and one lower case character</li>
+        <li>At least one number or special character</li>
+      </ul>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Simplifyd Biz. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase Signup with Email Verification -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAieRdXGsYRowlrCP-f20iylTb_KHK77yQ",
+      authDomain: "simplifyd-biz.firebaseapp.com",
+      projectId: "simplifyd-biz",
+      storageBucket: "simplifyd-biz.appspot.com",
+      messagingSenderId: "681167510393",
+      appId: "1:681167510393:web:6a97787187ee27e879eda8",
+      measurementId: "G-V2046MG1R6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("#signup-form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            sendEmailVerification(user)
+              .then(() => {
+                alert("Signup successful! A verification email has been sent. Please check your inbox.");
+                window.location.href = "thank-you.html";
+              })
+              .catch((error) => {
+                alert("Failed to send verification email: " + error.message);
+              });
+          })
+          .catch((error) => {
+            alert("Signup failed: " + error.message);
+          });
+      });
+    });
+  </script>
+</body>
+</html>
