@@ -1,0 +1,97 @@
+/* Reset & Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9ff;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.menu li a:hover {
+  color: #800080;
+}
+
+/* Section Styling */
+.section-padding {
+  padding: 60px 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+.section-padding h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #800080;
+}
+.section-padding p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Ordered List Styling */
+ol {
+  text-align: left;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+ol li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: #ff1493;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: #e60073;
+}
+
+/* Footer */
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto;
+}
