@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buyer & Seller Forms</title>
+  <link rel="stylesheet" href="buyer_seller_forms.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <!-- Buyer Form -->
+    <div class="form-section">
+      <h2>Buyer Form</h2>
+      <form id="buyerForm">
+        <div class="input-group">
+          <label for="buyerName">Full Name</label>
+          <input type="text" id="buyerName" name="buyerName" required>
+        </div>
+        <div class="input-group">
+          <label for="buyerEmail">Email</label>
+          <input type="email" id="buyerEmail" name="buyerEmail" required>
+        </div>
+        <div class="input-group">
+          <label for="buyerItem">Item Interested In</label>
+          <input type="text" id="buyerItem" name="buyerItem" required>
+        </div>
+        <div class="input-group">
+          <label for="buyerNotes">Additional Notes</label>
+          <textarea id="buyerNotes" name="buyerNotes" rows="4"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Buyer Info</button>
+      </form>
+    </div>
+
+    <!-- Seller Form -->
+    <div class="form-section">
+      <h2>Seller Form</h2>
+      <form id="sellerForm">
+        <div class="input-group">
+          <label for="sellerName">Full Name</label>
+          <input type="text" id="sellerName" name="sellerName" required>
+        </div>
+        <div class="input-group">
+          <label for="sellerEmail">Email</label>
+          <input type="email" id="sellerEmail" name="sellerEmail" required>
+        </div>
+        <div class="input-group">
+          <label for="sellerItem">Item for Sale</label>
+          <input type="text" id="sellerItem" name="sellerItem" required>
+        </div>
+        <div class="input-group">
+          <label for="sellerPrice">Proposed Price</label>
+          <input type="number" id="sellerPrice" name="sellerPrice" required>
+        </div>
+        <div class="input-group">
+          <label for="sellerNotes">Additional Notes</label>
+          <textarea id="sellerNotes" name="sellerNotes" rows="4"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Seller Info</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="buyer_seller_forms.js"></script>
+</body>
+</html>
