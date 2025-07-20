@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buyer/Seller Form - Simplifyd Biz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="formSection">
+    <h1>NEVER BUY OR SELL ONLINE WITHOUT USING SIMPLIFYD BIZ</h1>
+    <p>With SIMPLIFYD BIZ, you can buy and sell anything safely without losing your money or goods.</p>
+    
+    <label for="userType">I am:</label>
+    <select id="userType">
+      <option value="" disabled selected>Select</option>
+      <option value="buyer">Buying</option>
+      <option value="seller">Selling</option>
+    </select>
+
+    <label for="itemType">What do you want to sell/buy:</label>
+    <select id="itemType">
+      <option value="" disabled selected>Select an item</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="furniture">Furniture</option>
+      <option value="services">Services</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="price">Price (in KSh):</label>
+    <input type="number" id="price" placeholder="Enter price in KSh" />
+
+    <button onclick="showLogin()">Get Started Now</button>
+  </div>
+
+  <div class="container hidden" id="loginSection">
+    <h1>Login to Simplifyd Biz</h1>
+    
+    <label for="email">Please enter your email address:</label>
+    <input type="email" id="email" placeholder="your@example.com" />
+
+    <label for="password">Please enter your password:</label>
+    <input type="password" id="password" placeholder="Enter your password" />
+
+    <button>Secure Login</button>
+
+    <div class="footer-links">
+      <a href="#">Recover your password</a> | 
+      <a href="#">Register an account</a>
+    </div>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById('formSection').classList.add('hidden');
+      document.getElementById('loginSection').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
