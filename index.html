@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simplifyd Biz - Secure Escrow Service</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Simplifyd Biz</div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section">
+    <h1>Secure Your Online Transactions</h1>
+    <p>Escrow made easy with Simplifyd Biz. Trust, Transparency, and Speed.</p>
+    <a href="get-started.html" class="cta-button">Get Started</a>
+  </section>
+
+  <section id="how-it-works" class="section-padding">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step" data-aos="fade-up">
+        <h3>1. Agreement</h3>
+        <p>Buyer and Seller agree on the terms of the transaction.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <h3>2. Payment</h3>
+        <p>Buyer submits payment to our secure escrow account.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <h3>3. Delivery</h3>
+        <p>Seller delivers the product/service to the buyer.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <h3>4. Release</h3>
+        <p>Funds are released to the seller after confirmation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-padding">
+    <h2>About Simplifyd Biz</h2>
+    <p>We are committed to making online transactions safer and more reliable for businesses and individuals across Kenya. With our escrow platform, you can avoid fraud and disputes.</p>
+  </section>
+
+  <section id="contact" class="section-padding">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+    <p id="formResponse"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Simplifyd Biz. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="firebase.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
